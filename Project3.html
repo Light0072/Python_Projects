@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Convert Liters</title>
+    </head>
+    <body>
+        <header>
+            <h2 align = "center">Liquid Volume Converter</h2>
+        </header>
+            <h4 align = "center">INPUT(liters)</h4>
+            <form onsubmit = "convert()">
+                <p align = "center" class = "padding">
+                    A <input type = "text" id = "liters">
+                        <input align = "center" class = "button" type = "submit" value = "Convert" >
+                </p>
+                <p align = "center">
+                    <span class = "space">________________</span><input class = "button" type = "reset" value = "Clear">
+                </p>
+            </form>
+            <h4 align = "center">OUTPUT</h4>
+            <p align = "center" class = "padding" >
+                B <input type = "text" id = "pintdisplay"> Pints <span class = "space">__</span><br>
+            </p>
+            <p align = "center">
+                C <input type = "text" id = "quartdisplay"> Quarts <span class = "space">_</span><br>
+            </p>
+            <p align = "center">
+                D <input type = "text" id = "gallondisplay"> Gallons<br>
+            </p>
+
+        <script>
+            function convert() {
+            var liter = document.getElementById("liters").value;
+            var pints = (liter*2.113376).toFixed(2);
+            var quarts = (liter*1.05569).toFixed(2);
+            var gallons = (liter*0.264172).toFixed(2);
+            document.getElementById("pintdisplay").value = pints;
+            document.getElementById("quartdisplay").value = quarts;
+            document.getElementById("gallondisplay").value = gallons;
+            }
+        </script>
+
+        <style>
+        .button{
+            text-align = center;
+            width: 60px;
+
+        }
+        p.clear{
+            width: 60px;
+        }
+        .space{
+        color: white;
+        }
+        .padding{
+            padding = 10px;
+        }
+        </style>
+
+    </body>
+</html>
